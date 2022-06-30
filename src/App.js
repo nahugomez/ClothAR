@@ -1,9 +1,10 @@
 import "./App.css";
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   return (
     <>
-      <h1 className="text-center text-5xl font-black">Estructura Inicial</h1>
+      <NavBar />
     </>
   );
 }
