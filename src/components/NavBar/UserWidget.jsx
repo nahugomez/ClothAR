@@ -1,9 +1,9 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 
-const UserWidget = () => {
+const UserWidget = ({ styles }) => {
   return (
-    <a href="/user" className="duration-300 hover:opacity-50">
+    <a href="/user" className={styles}>
       <Icon icon="bxs:user-circle" height={"48px"} width={"48px"} />
     </a>
   );

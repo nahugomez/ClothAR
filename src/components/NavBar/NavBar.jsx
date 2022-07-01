@@ -11,12 +11,15 @@ const NavBar = () => {
 
   return (
     <nav className="flex flex-wrap items-center justify-between bg-neutral-900 py-6 px-3 text-white">
-      <a href="/home" className="text-4xl font-black">
+      <a
+        href="/home"
+        className="text-4xl font-black duration-300 hover:opacity-50"
+      >
         ClothEs
       </a>
       <div className="flex gap-x-3 lg:hidden">
-        <UserWidget />
-        <CartWidget />
+        <UserWidget styles="hover:opacity-50 duration-300 lg:hidden" />
+        <CartWidget styles="hover:opacity-50 duration-300 lg:hidden" />
         <button className="duration-300 hover:opacity-50" onClick={showMenu}>
           <Icon icon="dashicons:menu-alt" height={"48px"} width={"48px"} />
         </button>
@@ -53,8 +56,8 @@ const NavBar = () => {
           >
             Contacto
           </a>
-          <UserWidget />
-          <CartWidget />
+          <UserWidget styles="hover:opacity-50 duration-300 hidden lg:block" />
+          <CartWidget styles="hover:opacity-50 duration-300 hidden lg:block" />
         </div>
       </div>
     </nav>

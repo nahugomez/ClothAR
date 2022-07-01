@@ -1,0 +1,29 @@
+[
+  {
+    "id": "001",
+    "name": "Levi's Jean 505",
+    "price": 12600,
+    "color": "Blue",
+    "sizes": [38, 40, 42, 44],
+    "stock": [20, 15, 6, 9],
+    "img": "/images/levis_505_jean.jpg"
+  },
+  {
+    "id": "002",
+    "name": "Vans White Tee",
+    "price": 4500,
+    "color": "White",
+    "sizes": ["S", "M", "L", "XL"],
+    "stock": [10, 2, 12, 10],
+    "img": "/images/vans_white_tee.jpg"
+  },
+  {
+    "id": "003",
+    "name": "Adidas Black Hoodie",
+    "price": 11000,
+    "color": "Black",
+    "sizes": ["S", "M", "L", "XL"],
+    "stock": [12, 5, 18, 9],
+    "img": "/images/adidas_hoodie.jpg"
+  }
+]

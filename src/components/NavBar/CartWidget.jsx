@@ -1,9 +1,9 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 
-const CartWidget = () => {
+const CartWidget = ({ styles }) => {
   return (
-    <a href="/cart" className="duration-300 hover:opacity-50">
+    <a href="/cart" className={styles}>
       <Icon icon="ph:handbag-fill" height={"48px"} width={"48px"} />
     </a>
   );

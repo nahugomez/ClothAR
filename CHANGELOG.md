@@ -8,6 +8,14 @@
 - Se creo la configuración de Prettier (Creación de archivo .prettierrc.json)
 - Se creó el archivo .editorconfig
 
-## NavBar created
+## NavBar Created
 - Se creó un componente *NavBar* adaptable a dispositivos
 - Se incluyeron dentro los componentes *CartWidget* y *UserWidget*
+
+## ItemListContainer Created
+- Se creó el componente *ItemListContainer* que se encarga de obtener los items
+- Se creó el componente *ItemList* encargado de renderizar cada uno de los items
+- Se creó el componente *Item* renderizado por ItemList
+- Se realizaron arreglos al NavBar inicial
+- Favicon agregado
+- Se instaló React-Spinners
