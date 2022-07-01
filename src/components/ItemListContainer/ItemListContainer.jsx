@@ -16,7 +16,17 @@ const ItemListContainer = () => {
     setTimeout(getItems, 3000);
   }, []);
 
-  return <>{loader ? <div className="flex justify-center mt-24"><BarLoader /></div> : <ItemList items={items} />}</>;
+  return (
+    <>
+      {loader ? (
+        <div className="mt-24 flex justify-center">
+          <BarLoader />
+        </div>
+      ) : (
+        <ItemList items={items} />
+      )}
+    </>
+  );
 };
 
 export default ItemListContainer;
