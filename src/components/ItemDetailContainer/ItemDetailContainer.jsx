@@ -1,20 +1,28 @@
 import React, { useEffect, useState } from "react";
 import BarLoader from "react-spinners/BarLoader";
 import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
 
 const ItemListDetail = () => {
   const [item, setItem] = useState([]);
   const [loader, setLoader] = useState(true);
 
+  const { id } = useParams();
+
   useEffect(() => {
-    const getItem = async () => {
-      const data = await fetch("/item.json");
-      const listItems = await data.json();
-      setItem(listItems);
+    const getItems = async () => {
+      const data = await fetch("/items.json");
+      const info = await data.json();
+
+      const product = info.find((item) => item.id == id);
+
+      console.log(product); // PRUEBA
+
+      setItem(product);
       setLoader(false);
     };
-    setTimeout(getItem, 2000);
-  }, []);
+    getItems();
+  }, [id]);
 
   return (
     <>

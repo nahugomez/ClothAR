@@ -1,29 +1,52 @@
 [
   {
-    "id": "001",
-    "name": "Levi's Jean 505",
-    "price": 12600,
-    "color": "Blue",
-    "sizes": [38, 40, 42, 44],
-    "stock": [20, 15, 6, 9],
-    "img": "/images/levis_505_jean.jpg"
-  },
-  {
-    "id": "002",
-    "name": "Vans White Tee",
+    "id": 1,
+    "name": "Reloj de Hombre Plateado",
     "price": 4500,
-    "color": "White",
-    "sizes": ["S", "M", "L", "XL"],
-    "stock": [10, 2, 12, 10],
-    "img": "/images/vans_white_tee.jpg"
+    "color": "Plateado",
+    "stock": 20,
+    "img": "/images/menwatch.jpg",
+    "category": "men",
+    "route": "/item/1"
   },
   {
-    "id": "003",
-    "name": "Adidas Black Hoodie",
-    "price": 11000,
-    "color": "Black",
-    "sizes": ["S", "M", "L", "XL"],
-    "stock": [12, 5, 18, 9],
-    "img": "/images/adidas_hoodie.jpg"
+    "id": 2,
+    "name": "Anillo Dorado de Mujer",
+    "price": 2200,
+    "color": "Dorado",
+    "stock": 10,
+    "img": "/images/womenring.jpg",
+    "category": "women",
+    "route": "/item/2"
+  },
+  {
+    "id": 3,
+    "name": "Reloj de Hombre Básico",
+    "price": 3500,
+    "color": "Marron",
+    "stock": 45,
+    "img": "/images/basicwatch.jpg",
+    "category": "men",
+    "route": "/item/3"
+  },
+  {
+    "id": 4,
+    "name": "Anillo de Mujer Exótico",
+    "price": 3500,
+    "color": "Dorado",
+    "stock": 10,
+    "img": "/images/womenring2.jpg",
+    "category": "women",
+    "route": "/item/4"
+  },
+  {
+    "id": 5,
+    "name": "Reloj de Mujer Negro",
+    "price": 3000,
+    "color": "Negro",
+    "stock": 20,
+    "img": "/images/womenwatch.jpg",
+    "category": "women",
+    "route": "/item/5"
   }
 ]

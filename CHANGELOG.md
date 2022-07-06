@@ -20,7 +20,11 @@
 - Favicon agregado
 - Se instaló React-Spinners
 
-## ItemListDetail Created
+## ItemDetailContainer Created
 - Se creó el componente *ItemDetailContainer* que se encarga de hacer un fetch() del item
 - Se creó el componente *ItemDetail* que se encarga de renderizar el item
 - Se creó el componente *ItemCount* dentro de ItemDetail
+
+## React-Router-Dom Integrated
+- Se integró react-router-dom
+- Se realizaron cambios en la UI

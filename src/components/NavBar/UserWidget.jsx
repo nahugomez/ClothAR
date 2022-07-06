@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 
-const UserWidget = ({ styles }) => {
+const UserWidget = () => {
   return (
-    <a href="/user" className={styles}>
+    <Link to={"/"} className="hover:opacity-50 duration-300">
       <Icon icon="bxs:user-circle" height={"48px"} width={"48px"} />
-    </a>
+    </Link>
   );
 };
 

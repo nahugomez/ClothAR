@@ -1,6 +1,5 @@
 # ClothAR - Tienda Virtual de Ropa en Argentina
 ClothAR es un ecommerce de venta de ropa en Argentina, realizado con REACT para el curso de CODERHOUSE.
-El proyecto esta desarrollado siguiendo el diseño Mobile First que recomienda TailwindCSS
 
 ## Datos sobre el proyecto
 - Realizado para el curso de **REACT** de **CODERHOUSE**
@@ -16,3 +15,4 @@ El proyecto esta desarrollado siguiendo el diseño Mobile First que recomienda T
 - Manejo de asincronía con promesas
 - Uso del método MAP
 - Consumo de APIs con Fetch
+- Uso de react-router-dom

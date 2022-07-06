@@ -38,7 +38,7 @@ const ItemCount = ({ stock, funct }) => {
       ) : (
         <button
           onClick={handlerClick}
-          className="my-3 w-full rounded bg-black py-3 text-center text-white duration-300 hover:opacity-50"
+          className="mt-3 w-full rounded-lg bg-neutral-900 p-3 text-center text-white duration-300 hover:opacity-50"
         >
           Agregar al carrito
         </button>

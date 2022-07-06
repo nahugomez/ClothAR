@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 
-const CartWidget = ({ styles }) => {
+const CartWidget = () => {
   return (
-    <a href="/cart" className={styles}>
+    <Link to={"/"} className="duration-300 hover:opacity-50">
       <Icon icon="ph:handbag-fill" height={"48px"} width={"48px"} />
-    </a>
+    </Link>
   );
 };
 
