@@ -28,3 +28,6 @@
 ## React-Router-Dom Integrated
 - Se integró react-router-dom
 - Se realizaron cambios en la UI
+
+## ItemCount integrated into ItemDetail
+- Se integró ItemCount dentro de ItemDetail

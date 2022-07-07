@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ItemCount = ({ stock, funct }) => {
+const ItemCount = ({ stock, onAdd }) => {
   const [units, setUnits] = useState(1);
   const [current, setCurrent] = useState(stock);
 
@@ -19,7 +19,7 @@ const ItemCount = ({ stock, funct }) => {
   const handlerClick = () => {
     setCurrent(current - units);
     setUnits(1);
-    funct(units);
+    onAdd(units);
   };
 
   return (

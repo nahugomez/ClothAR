@@ -1,12 +1,15 @@
 import { Icon } from "@iconify/react";
-import React from "react";
+import React, { useState } from "react";
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ item }) => {
+  const [amount, setAmount] = useState(0);
 
   const onAdd = (units) => {
     console.log(`El usuario compró ${units} artículos!`);
-  }
+    setAmount(units);
+  };
 
   return (
     <>
@@ -21,7 +24,15 @@ const ItemDetail = ({ item }) => {
           <p className="text-xl font-semibold italic">${item.price}</p>
           <p>Artículos Disponibles: {item.stock}</p>
           <p>Color: {item.color}</p>
-          <ItemCount stock={item.stock} funct={onAdd}/>
+          {amount === 0 ? (
+            <ItemCount stock={item.stock} onAdd={onAdd} />
+          ) : (
+            <Link to="/cart">
+              <button className="mt-3 w-full rounded-lg bg-neutral-900 p-3 text-center text-white duration-300 hover:opacity-50">
+                Finalizar compra
+              </button>
+            </Link>
+          )}
           <div className="flex items-center gap-x-3 text-green-600">
             <Icon
               icon="material-symbols:local-shipping-rounded"
