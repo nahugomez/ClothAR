@@ -18,8 +18,8 @@ const ItemCount = ({ stock, onAdd }) => {
 
   const handlerClick = () => {
     setCurrent(current - units);
-    setUnits(1);
     onAdd(units);
+    setUnits(1);
   };
 
   return (

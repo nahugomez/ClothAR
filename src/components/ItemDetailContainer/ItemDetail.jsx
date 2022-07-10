@@ -1,13 +1,17 @@
 import { Icon } from "@iconify/react";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
+import { cartContext } from "../../context/CartContext/CustomProvider";
 
 const ItemDetail = ({ item }) => {
   const [amount, setAmount] = useState(0);
 
+  const { addProduct } = useContext(cartContext);
+
   const onAdd = (units) => {
-    console.log(`El usuario compró ${units} artículos!`);
+    const product = { ...item, qty: units };
+    addProduct(product);
     setAmount(units);
   };
 

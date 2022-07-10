@@ -16,8 +16,6 @@ const ItemListDetail = () => {
 
       const product = info.find((item) => item.id == id);
 
-      console.log(product); // PRUEBA
-
       setItem(product);
       setLoader(false);
     };

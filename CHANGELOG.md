@@ -31,3 +31,6 @@
 
 ## ItemCount integrated into ItemDetail
 - Se integró ItemCount dentro de ItemDetail
+
+## Context Integrated
+- Creación de *CustomProvider*, componente que crea y provee el contexto a los demás componentes del estado de compra del Usuario.
