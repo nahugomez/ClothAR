@@ -7,10 +7,10 @@ const CartWidget = () => {
   const { qty } = useContext(cartContext);
   return (
     <>
-      <Link to={"/"} className="duration-300 hover:opacity-50">
+      <Link to={"/cart"} className="duration-300 hover:opacity-50">
         <Icon icon="ph:handbag-fill" height={"48px"} width={"48px"} />
       </Link>
-      <p className="font-bold text-sm">{qty}</p>
+      {qty === 0 ? "" : <p className="font-bold text-sm">{qty}</p>}
     </>
   );
 };
