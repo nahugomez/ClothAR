@@ -18,3 +18,4 @@ ClothAR es un ecommerce de venta de ropa en Argentina, realizado con REACT para 
 - Uso de react-router-dom
 - Manejo del Context 
 - Renderizado condicional
+- Uso de Firestore para el almacenamiento de datos

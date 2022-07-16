@@ -40,3 +40,7 @@
 - Provisión de controles para eliminar productos del carrito
 - Muestra del total a pagar por el usuario en base a productos seleccionados (Nueva función getTotalPrice en CartContext)
 - Se arregló CartWidget (Dirige a /cart y no muestra "0" cuando no hay productos seleccionados)
+
+## Firestore linked
+- Se instaló Firebase
+- Logica desarrollada para consumir Firestore

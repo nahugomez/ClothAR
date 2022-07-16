@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import BarLoader from "react-spinners/BarLoader";
 import { useParams } from "react-router";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { database } from "../../firebase/firebase";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -10,18 +12,23 @@ const ItemListContainer = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const getItems = async () => {
-      const data = await fetch("/items.json");
-      const info = await data.json();
-
-      if (id !== undefined) {
-        const products = info.filter((item) => item.category === id);
-        setItems(products);
-      } else {
-        setItems(info);
-      }
-
-      setLoader(false);
+    const getItems = () => {
+      const productsCollection = collection(database, "products");
+      const searched = id !== undefined ? query(productsCollection, where("category", "==", id)) : productsCollection;
+      getDocs(searched)
+      .then((result)=>{
+        const productList = result.docs.map((product)=> {
+          return {
+            ...product.data(),
+            id: product.id,
+            route: `/item/${product.id}`
+          }
+        });
+        setItems(productList); 
+      })
+      .finally(() => {
+        setLoader(false);
+      });
     };
     getItems();
   }, [id]);
@@ -40,3 +47,19 @@ const ItemListContainer = () => {
 };
 
 export default ItemListContainer;
+
+// const productsCollection = collection(database, "products");
+      // getDocs(productsCollection)
+      //   .then((result) => {
+      //     const productsList = result.docs.map((product) => {
+      //       return {
+      //         id: product.id,
+      //         route: `/item/${product.id}`,
+      //         ...product.data,
+      //       };
+      //     })};
+      //     id === undefined
+      //       ? setItems(productsList)
+      //       : setItems();
+      //   })
+      //   .finally(setLoader(false));

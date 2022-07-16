@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import BarLoader from "react-spinners/BarLoader";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { database } from "../../firebase/firebase";
 
 const ItemListDetail = () => {
   const [item, setItem] = useState([]);
@@ -10,16 +12,17 @@ const ItemListDetail = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const getItems = async () => {
-      const data = await fetch("/items.json");
-      const info = await data.json();
-
-      const product = info.find((item) => item.id == id);
-
-      setItem(product);
-      setLoader(false);
+    const getItem = () => {
+      const docRef = doc(database, "products", id);
+      getDoc(docRef)
+        .then((result) => {
+          setItem(result.data());
+        })
+        .finally(() => {
+          setLoader(false);
+        });
     };
-    getItems();
+    getItem();
   }, [id]);
 
   return (
