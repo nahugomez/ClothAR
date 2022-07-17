@@ -44,3 +44,6 @@
 ## Firestore linked
 - Se instaló Firebase
 - Logica desarrollada para consumir Firestore
+
+## CartView fixed
+- Se arregló el bug de duplicado de productos añadidos al carrito

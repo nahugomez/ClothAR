@@ -24,7 +24,7 @@ const CustomProvider = ({ children }) => {
   }, [products]);
 
   const IsInProducts = (product) => {
-    return products.some((elem) => elem.id === product.id);
+    return products.some((elem) => elem.name === product.name);
   };
 
   const clearProducts = () => {
@@ -35,7 +35,7 @@ const CustomProvider = ({ children }) => {
   const addProduct = (product) => {
     const duplicated = IsInProducts(product);
     if (duplicated) {
-      const founded = products.find((elem) => elem.id === product.id);
+      const founded = products.find((elem) => elem.name === product.name);
       const index = products.indexOf(founded);
       const aux = [...products];
       aux[index].qty += product.qty;

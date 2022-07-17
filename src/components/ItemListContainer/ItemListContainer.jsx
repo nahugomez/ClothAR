@@ -47,19 +47,3 @@ const ItemListContainer = () => {
 };
 
 export default ItemListContainer;
-
-// const productsCollection = collection(database, "products");
-      // getDocs(productsCollection)
-      //   .then((result) => {
-      //     const productsList = result.docs.map((product) => {
-      //       return {
-      //         id: product.id,
-      //         route: `/item/${product.id}`,
-      //         ...product.data,
-      //       };
-      //     })};
-      //     id === undefined
-      //       ? setItems(productsList)
-      //       : setItems();
-      //   })
-      //   .finally(setLoader(false));
