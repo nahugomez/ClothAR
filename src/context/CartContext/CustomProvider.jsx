@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
+import Swal from "sweetalert2";
 
 export const cartContext = createContext();
 const { Provider } = cartContext;
@@ -28,8 +29,23 @@ const CustomProvider = ({ children }) => {
   };
 
   const clearProducts = () => {
-    setProducts([]);
-    setQty(0);
+    Swal.fire({
+      title: '¿Está seguro de que desea eliminar todos los productos?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#000',
+      cancelButtonColor: '#000',
+      confirmButtonText: 'Si',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setProducts([]);
+        setQty(0);
+        Swal.fire(
+          'Los productos fueron eliminados'
+        )
+      }
+    })
   };
 
   const addProduct = (product) => {
@@ -46,8 +62,24 @@ const CustomProvider = ({ children }) => {
   };
 
   const deleteProduct = (id) => {
-    const copyProducts = products.filter((elem) => elem.id !== id);
-    setProducts(copyProducts);
+    
+    Swal.fire({
+      title: '¿Está seguro de que desea eliminar este producto?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#000',
+      cancelButtonColor: '#000',
+      confirmButtonText: 'Si',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const copyProducts = products.filter((elem) => elem.id !== id);
+        setProducts(copyProducts);
+        Swal.fire(
+          'El producto fue eliminado'
+        )
+      }
+    })
   };
 
   return (

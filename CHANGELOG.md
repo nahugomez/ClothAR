@@ -47,3 +47,6 @@
 
 ## CartView fixed
 - Se arregló el bug de duplicado de productos añadidos al carrito
+
+## SweetAlert integrated
+- Ahora se muestra una alerta de SweetAlert al pulsar los botones que eliminan uno o todos los productos
