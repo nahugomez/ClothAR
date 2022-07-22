@@ -60,7 +60,7 @@ const UserUnlogged = ({handlerSignup, handlerSignin, setName, setEmail, setPhone
           type="submit"
           className="w-full rounded-lg bg-neutral-900 p-3 text-center text-white duration-300 hover:opacity-50"
         >
-          Crear usuario
+          Iniciar Sesion
         </button>
       </form>
     </>

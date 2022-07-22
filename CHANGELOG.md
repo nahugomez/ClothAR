@@ -73,3 +73,7 @@
 
 - Se creó la función que finaliza la compra realizada por el usuario, devolviendole su número de compra
 - Al hacer click, se postea en la colección *sales* de Firestore un nuevo documento, que contiene los datos del usuario, y de la compra
+
+## Login setUser Fixed
+
+- Se modificó la función *loginUser* para que se modifique el estado de *user* con la información correspondiente

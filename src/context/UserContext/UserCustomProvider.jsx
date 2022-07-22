@@ -11,6 +11,7 @@ import {
   serverTimestamp,
   collection,
   addDoc,
+  getDoc,
 } from "firebase/firestore";
 import { auth } from "../../firebase/firebase";
 import { database } from "../../firebase/firebase";
@@ -84,6 +85,15 @@ const UserCustomProvider = ({ children }) => {
           text: "Ya puede realizar sus compras :)",
           icon: "success",
         });
+        const docRef = doc(database, "users", auth.currentUser.uid);
+        getDoc(docRef)
+          .then((result) => {
+            console.log(result);
+            setUser(result.data());
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
       })
       .catch((error) => {
         Swal.fire({
