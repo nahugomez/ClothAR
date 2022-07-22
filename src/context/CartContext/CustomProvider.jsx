@@ -92,6 +92,7 @@ const CustomProvider = ({ children }) => {
           clearProducts,
           qty,
           totalPrice,
+          setProducts
         }}
       >
         {children}

@@ -5,7 +5,13 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { setDoc, doc, serverTimestamp } from "firebase/firestore";
+import {
+  setDoc,
+  doc,
+  serverTimestamp,
+  collection,
+  addDoc,
+} from "firebase/firestore";
 import { auth } from "../../firebase/firebase";
 import { database } from "../../firebase/firebase";
 import Swal from "sweetalert2";
@@ -15,6 +21,7 @@ const { Provider } = userContext;
 
 const UserCustomProvider = ({ children }) => {
   const [logged, setLogged] = useState(false);
+  const [user, setUser] = useState({});
 
   const createUser = (name, email, phone, password) => {
     createUserWithEmailAndPassword(auth, email, password)
@@ -26,6 +33,7 @@ const UserCustomProvider = ({ children }) => {
           email,
         };
         setDoc(userDoc, { ...data, created: serverTimestamp() }); // Devuelve una promesa vacía, no es necesario el uso de then/catch
+        setUser({ id: auth.currentUser.uid, ...data });
         Swal.fire({
           title: "Usuario creado con éxito",
           icon: "success",
@@ -46,6 +54,7 @@ const UserCustomProvider = ({ children }) => {
       setLogged(true);
     } else {
       setLogged(false);
+      setUser({});
     }
   });
 
@@ -85,9 +94,33 @@ const UserCustomProvider = ({ children }) => {
       });
   };
 
+  const endPurchase = (products, total) => {
+    const salesRef = collection(database, "sales");
+    const data = {
+      buyer: { ...user },
+      items: { products, date: serverTimestamp(), total: total },
+    };
+    addDoc(salesRef, data)
+      .then((docsRef) => {
+        Swal.fire({
+          title: "Tu compra finalizó con éxito.",
+          text: `Tu número de compra es: ${docsRef.id}`,
+          icon: "success",
+        });
+      })
+      .catch(() => {
+        Swal.fire({
+          title: "Algo salió mal.",
+          icon: "error",
+        });
+      });
+  };
+
   return (
     <>
-      <Provider value={{ createUser, logoutUser, loginUser, logged }}>
+      <Provider
+        value={{ createUser, logoutUser, loginUser, logged, endPurchase }}
+      >
         {children}
       </Provider>
     </>

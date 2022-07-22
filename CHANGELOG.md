@@ -68,3 +68,8 @@
 
 - SignUp y SingIn de usuarios mediante Email y Contraseña
 - Los usuarios nuevos crean un documento nuevo en la colección *users* de Firestore, cuyo ID corresponde con el UID
+
+## Endpurchase Function Created
+
+- Se creó la función que finaliza la compra realizada por el usuario, devolviendole su número de compra
+- Al hacer click, se postea en la colección *sales* de Firestore un nuevo documento, que contiene los datos del usuario, y de la compra
