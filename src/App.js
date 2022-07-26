@@ -7,6 +7,7 @@ import Cart from "./components/Cart/Cart";
 import CustomProvider from "./context/CartContext/CustomProvider";
 import User from "./components/User/User";
 import UserCustomProvider from "./context/UserContext/UserCustomProvider";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/user" element={<User />} />
             </Routes>
+            <Footer />
           </UserCustomProvider>
         </CustomProvider>
       </BrowserRouter>

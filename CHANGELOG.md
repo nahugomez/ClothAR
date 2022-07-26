@@ -77,3 +77,7 @@
 ## Login setUser Fixed
 
 - Se modificó la función *loginUser* para que se modifique el estado de *user* con la información correspondiente
+
+## Footer added
+
+- Se creó y añadió el componente *Footer* a la aplicación

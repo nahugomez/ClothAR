@@ -61,16 +61,6 @@ const NavBar = () => {
           >
             Mujeres
           </NavLink>
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              isActive
-                ? "text-lg font-bold duration-300 hover:opacity-50"
-                : "text-lg font-medium duration-300 hover:opacity-50"
-            }
-          >
-            Contacto
-          </NavLink>
           <UserWidget />
           <CartWidget />
         </div>
